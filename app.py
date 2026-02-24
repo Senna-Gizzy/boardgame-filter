@@ -24,7 +24,7 @@ if st.button("Search for a Specific Game"):
     
 amount_player = st.number_input("Amount of Players", min_value=1, step=1)
 language = st.selectbox('Language', [None, 'Dutch', 'English'])
-game_type = st.selectbox('Game Type', ["Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
+game_type = st.selectbox('Game Type', [None,"Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
 
 # game_type = st.text_input("Game Type")
 
