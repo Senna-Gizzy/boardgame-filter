@@ -3,7 +3,7 @@ import pandas as pd
 
 df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
 
-st.title("🔍 Search for a Specific Game")
+st.title("Search for a Specific Game")
 
 # Back button
 if st.button("⬅ Back to Home"):
