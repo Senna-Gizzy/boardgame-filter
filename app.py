@@ -17,9 +17,9 @@ df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
 
 df['Type'] = df['Type'].str.split(',').str[-1].str.strip()
 
-st.title("🎲 Boardgame Filter")
+st.title("Boardgame Filter")
 
-if st.button("🔍 Search for a Specific Game"):
+if st.button("Search for a Specific Game"):
     st.switch_page("pages/Search_Game.py")
     
 amount_player = st.number_input("Amount of Players", min_value=1, step=1)
