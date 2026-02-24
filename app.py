@@ -67,7 +67,7 @@ if st.button("Filter Games"):
     if use_language:
         filtered = filtered[filtered['Language'] == language]
 
-    if use_game_type:
+    if use_type:
         filtered = filtered[filtered['Type'] == game_type]
 
     if use_playing_time:
