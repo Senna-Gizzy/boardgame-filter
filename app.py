@@ -28,7 +28,7 @@ if st.button("Filter Games"):
     #     filtered = filtered[filtered['Max. Players'] == max_player]
 
     if amount_player is not None:
-        filtered = filtered[filtered['Min. Players']>= amount_player and filtered['Max. Players']<= amount_player]
+        filtered = filtered[(filtered['Min. Players']>= amount_player) & (filtered['Max. Players']<= amount_player)]
 
     if language is not None:
         filtered = filtered[filtered['Language'] == language]
