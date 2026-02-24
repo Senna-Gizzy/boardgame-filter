@@ -24,7 +24,7 @@ df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
 #_____________________________________________________________________________________________
 # Title
-st.title("Boardgame Filter")
+st.title("Spellenhuis Den Haag BoardGames")
 
 #_____________________________________________________________________________________________
 # Search button
@@ -38,19 +38,23 @@ st.subheader("Filter Options")
 
 # Players
 use_players = st.toggle("Filter by Amount of Players")
-amount_player = st.number_input("Amount of Players", min_value=1, step=1)
+if use_players:
+    amount_player = st.number_input("Amount of Players", min_value=1, step=1)
 
 # Language
 use_language = st.toggle("Filter by Language")
-language = st.selectbox("Language", ['Dutch', 'English'])
+if use_language:
+    language = st.selectbox("Language", ['Dutch', 'English'])
 
 # Type
 use_type = st.toggle("Filter by Game Type")
-game_type = st.selectbox("Game Type",["Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
+if use_type:
+    game_type = st.selectbox("Game Type",["Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
 
 # Playing Time
 use_playing_time = st.toggle("Filter by Maximum Playing Time")
-playing_time = st.number_input("Maximum Playing Time (minutes)", min_value=10, step=5)
+if use_playing_time:
+    playing_time = st.number_input("Maximum Playing Time (minutes)", min_value=10, step=5)
 
 st.divider()
 
