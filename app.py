@@ -15,10 +15,12 @@ import pandas as pd
 # Load your data (adjust filename!)
 df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
 
+# Prepare dataframe
 df['Type'] = df['Type'].str.split(',').str[-1].str.strip()
 df['Playing Time'] = df['Playing Time'].str[:-3].str.strip()
 df[['Min Playing Time', 'Max Playing Time']] = (df['Playing Time'].str.split('-', expand=True))
 df['Max Playing Time'] = df['Max Playing Time'].fillna(df['Min Playing Time'])
+df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
 st.title("Boardgame Filter")
 
