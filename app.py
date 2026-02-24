@@ -61,7 +61,7 @@ st.divider()
 if st.button("Filter Games"):
     filtered = df.copy()
 
-    if use_amount_player:
+    if use_players:
         filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
 
     if use_language:
