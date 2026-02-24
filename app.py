@@ -4,8 +4,7 @@ import pandas as pd
 # Load your data (adjust filename!)
 df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
 
-df['Min. Players'] = pd.to_numeric(df['Min. Players'], errors='coerce')
-df['Max. Players'] = pd.to_numeric(df['Max. Players'], errors='coerce')
+df['Type'] = df['Type'].str.split(',').str[-1].str.strip()
 
 st.title("🎲 Boardgame Filter")
 
