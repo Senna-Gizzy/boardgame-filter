@@ -9,7 +9,8 @@ df['Max. Players'] = pd.to_numeric(df['Max. Players'], errors='coerce')
 
 st.title("🎲 Boardgame Filter")
 
-amount_player = st.text_input("Amount of Players")
+amount_player = st.number_input("Amount of Players", min_value=1, step=1)
+# amount_player = st.text_input("Amount of Players")
 # min_player = st.text_input("Min Players")
 # max_player = st.text_input("Max Players")
 language = st.text_input("Language")
