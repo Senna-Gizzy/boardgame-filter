@@ -26,6 +26,7 @@ st.title("Boardgame Filter")
 
 if st.button("Search for a Specific Game"):
     st.switch_page("pages/Search_Game.py")
+st.divider()
     
 amount_player = st.number_input("Amount of Players", min_value=1, step=1)
 language = st.selectbox('Language', [None, 'Dutch', 'English'])
