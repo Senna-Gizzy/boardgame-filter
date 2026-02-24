@@ -49,7 +49,7 @@ if use_language:
 # Type
 use_type = st.toggle("Filter by Game Type")
 if use_type:
-    game_type = st.selectbox("Game Type",["Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
+    game_type = st.selectbox("Game Type",["Abstract","Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
 
 # Playing Time
 use_playing_time = st.toggle("Filter by Maximum Playing Time")
