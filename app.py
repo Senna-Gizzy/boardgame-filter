@@ -24,7 +24,7 @@ df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
 #_____________________________________________________________________________________________
 # Title
-st.title("Boardgame Filter"
+st.title("Boardgame Filter")
 
 #_____________________________________________________________________________________________
 # Search button
