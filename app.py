@@ -14,7 +14,7 @@ import pandas as pd
 
 # Load your data (adjust filename!)
 df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
-
+#_____________________________________________________________________________________________
 # Prepare dataframe
 df['Type'] = df['Type'].str.split(',').str[-1].str.strip()
 df['Playing Time'] = df['Playing Time'].str[:-3].str.strip()
@@ -22,36 +22,51 @@ df[['Min Playing Time', 'Max Playing Time']] = (df['Playing Time'].str.split('-'
 df['Max Playing Time'] = df['Max Playing Time'].fillna(df['Min Playing Time'])
 df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
-st.title("Boardgame Filter")
+#_____________________________________________________________________________________________
+# Title
+st.title("Boardgame Filter"
 
+#_____________________________________________________________________________________________
+# Search button
 if st.button("Search for a Specific Game"):
     st.switch_page("pages/Search_Game.py")
 st.divider()
-    
-amount_player = st.number_input("Amount of Players", min_value=1, step=1)
-language = st.selectbox('Language', [None, 'Dutch', 'English'])
-game_type = st.selectbox('Game Type', [None,"Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
-playing_time = st.number_input("Maximum Playing Time", min_value=10, step=5)
 
-# game_type = st.text_input("Game Type")
+#_____________________________________________________________________________________________
+# Main page
+st.subheader("Filter Options")
+
+# Players
+use_players = st.toggle("Filter by Amount of Players")
+amount_player = st.number_input("Amount of Players", min_value=1, step=1)
+
+# Language
+use_language = st.toggle("Filter by Language")
+language = st.selectbox("Language", ['Dutch', 'English'])
+
+# Type
+use_type = st.toggle("Filter by Game Type")
+game_type = st.selectbox("Game Type",["Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
+
+# Playing Time
+use_playing_time = st.toggle("Filter by Maximum Playing Time")
+playing_time = st.number_input("Maximum Playing Time (minutes)", min_value=10, step=5)
+
+st.divider()
 
 if st.button("Filter Games"):
-    amount_player = int(amount_player) if amount_player else None
-    language = language if language else None
-    game_type = game_type if game_type else None
-
     filtered = df.copy()
 
-    if amount_player is not None:
+    if amount_player:
         filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
 
-    if language is not None:
+    if language:
         filtered = filtered[filtered['Language'] == language]
 
-    if game_type is not None:
+    if game_type:
         filtered = filtered[filtered['Type'] == game_type]
 
-    if playing_time is not None:
+    if playing_time:
         filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
     if filtered.empty:
