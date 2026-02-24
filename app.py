@@ -13,7 +13,8 @@ amount_player = st.number_input("Amount of Players", min_value=1, step=1)
 # min_player = st.text_input("Min Players")
 # max_player = st.text_input("Max Players")
 language = st.text_input("Language")
-game_type = st.text_input("Game Type")
+game_type = st.selectbox('Game Type', ('Children's','Family', 'Party' ,'Strategy', 'Thematic'))
+# game_type = st.text_input("Game Type")
 
 if st.button("Filter Games"):
     amount_player = int(amount_player) if amount_player else None
