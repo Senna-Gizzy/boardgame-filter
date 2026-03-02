@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 #_____________________________________________________________________________________________
 # Add button
+st.title("Guru's Only Page")
+
 if st.button("Nieuw Spel Toevoegen"):
     st.switch_page("pages/Gurus_Only/Add.py")
 
