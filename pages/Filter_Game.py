@@ -2,6 +2,7 @@
 # Load your data (adjust filename!)
 import streamlit as st
 import pandas as pd
+import random
 
 sheet_url = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvmOim51vLmrUePJP5A/export?format=csv&gid=0"
 df = pd.read_csv(sheet_url)
@@ -47,7 +48,6 @@ col1, col2 = st.columns(2)
 
 with col1:
     if st.button("Zoek (10 willekeurige spellen)"):
-        # Show 10 random games
         filtered = df.copy()
         if use_players:
             filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
@@ -58,9 +58,20 @@ with col1:
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
-        # Show a random selection of games, but no more than 10
+        # Show up to 10 random games as cards
         if not filtered.empty:
-            st.write(filtered.sample(min(10, len(filtered)))[['Boardgame']])  # Random up to 10 games
+            games = filtered.sample(min(10, len(filtered)))
+            for idx, game in games.iterrows():
+                game_name = game['Boardgame']
+                game_link = f"https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)}"  # Placeholder link to BGG
+
+                # Display the card (you can customize it with a game image URL if available)
+                st.markdown(f"""
+                <div style="background-color:#f4f4f4; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+                    <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
+                    <p style="font-size: 14px;">Klik om naar de [BoardGameGeek pagina](https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)})</p>
+                </div>
+                """, unsafe_allow_html=True)
         else:
             st.warning("Geen spellen gevonden")
             
