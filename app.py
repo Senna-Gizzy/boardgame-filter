@@ -30,6 +30,10 @@ st.title("Spellenhuis Den Haag BoardGames")
 # Search button
 if st.button("Search for a Specific Game"):
     st.switch_page("pages/Search_Game.py")
+
+# Search button
+if st.button("Guru's Only"):
+    st.switch_page("pages/Gurus.py")
 st.divider()
 
 #_____________________________________________________________________________________________
