@@ -1,5 +1,8 @@
 # Hier komt uiteindelijk echt het filteren
 # Load your data (adjust filename!)
+import streamlit as st
+import pandas as pd
+
 df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
 #_____________________________________________________________________________________________
 # Prepare dataframe
