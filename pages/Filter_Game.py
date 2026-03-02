@@ -63,11 +63,11 @@ with col1:
             games = filtered.sample(min(10, len(filtered)))
             for idx, game in games.iterrows():
                 game_name = game['Boardgame']
-                game_link = f"https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)}"  # Placeholder link to BGG
+                #game_link = f"https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)}"  # Placeholder link to BGG
 
                 # Display the card (you can customize it with a game image URL if available)
                 st.markdown(f"""
-                <div style="background-color:#f4f4f4; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+                <div style="background-color:#699c9c; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
                     <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
                     
                 </div>
