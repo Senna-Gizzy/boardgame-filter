@@ -8,7 +8,7 @@ sheet_link = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffv
 
 st.markdown(f"""
 <a href="{sheet_link}" target="_blank">
-    <button style="padding:10px 20px; font-size:16px;">Spel Toevoegen of Verwijderen</button>
+    <button style="padding:10px 20px; font-size:14px;">Spel Toevoegen of Verwijderen</button>
 </a>
 """, unsafe_allow_html=True)
 
