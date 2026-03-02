@@ -42,22 +42,43 @@ if use_playing_time:
 
 st.divider()
 
-if st.button("Filter Spellen"):
-    filtered = df.copy()
+# Add the two buttons for filtering
+col1, col2 = st.columns(2)
 
-    if use_players:
-        filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
+with col1:
+    if st.button("Zoek (10 willekeurige spellen)"):
+        # Show 10 random games
+        filtered = df.copy()
+        if use_players:
+            filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
+        if use_language:
+            filtered = filtered[filtered['Language'] == language]
+        if use_type:
+            filtered = filtered[filtered['Type'] == game_type]
+        if use_playing_time:
+            filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
-    if use_language:
-        filtered = filtered[filtered['Language'] == language]
+        # Show random 10 games if filtered
+        if not filtered.empty:
+            st.write(filtered.sample(10)[['Boardgame']])  # Random 10 games
+        else:
+            st.warning("Geen spellen gevonden")
 
-    if use_type:
-        filtered = filtered[filtered['Type'] == game_type]
+with col2:
+    if st.button("Zoek Alle spellen"):
+        # Show all games
+        filtered = df.copy()
+        if use_players:
+            filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
+        if use_language:
+            filtered = filtered[filtered['Language'] == language]
+        if use_type:
+            filtered = filtered[filtered['Type'] == game_type]
+        if use_playing_time:
+            filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
-    if use_playing_time:
-        filtered = filtered[filtered['Max Playing Time'] <= playing_time]
-
-    if filtered.empty:
-        st.warning("No game can be found")
-    else:
-        st.write(filtered['Boardgame'])
+        # Show all games if filtered
+        if not filtered.empty:
+            st.write(filtered['Boardgame'])
+        else:
+            st.warning("Geen spellen gevonden")
