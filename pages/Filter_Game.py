@@ -47,7 +47,7 @@ st.divider()
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("Zoek (10 willekeurige spellen)"):
+    if st.button("Zoek Max 10 Spellen"):
         filtered = df.copy()
         if use_players:
             filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
@@ -67,7 +67,7 @@ with col1:
 
                 # Display the card (you can customize it with a game image URL if available)
                 st.markdown(f"""
-                <div style="background-color:#699c9c; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+                <div style="background-color:#c29e8e; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
                     <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
                     
                 </div>
