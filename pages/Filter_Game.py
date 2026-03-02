@@ -58,12 +58,12 @@ with col1:
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
-        # Show random 10 games if filtered
+        # Show a random selection of games, but no more than 10
         if not filtered.empty:
-            st.write(filtered.sample(10)[['Boardgame']])  # Random 10 games
+            st.write(filtered.sample(min(10, len(filtered)))[['Boardgame']])  # Random up to 10 games
         else:
             st.warning("Geen spellen gevonden")
-
+            
 with col2:
     if st.button("Zoek Alle spellen"):
         # Show all games
