@@ -14,7 +14,7 @@ if st.button("Login"):
     if password == CORRECT_PASSWORD:
         st.session_state.authenticated = True
         st.success("Access granted!")
-        st.switch_page("pages/Gurus_Only/Gurus_Only.py")
+        st.switch_page("Gurus_Only.py")
     else:
         st.error("Incorrect password")
 
