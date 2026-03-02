@@ -16,33 +16,33 @@ df['Max Playing Time'] = df['Max Playing Time'].fillna(df['Min Playing Time'])
 df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
 # Main Page
-st.subheader("Filter Options")
-if st.button("⬅ Back to Home"):
+st.subheader("Filter Opties")
+if st.button("⬅ Terug"):
     st.switch_page("app.py")
 
 # Players
-use_players = st.toggle("Filter by Amount of Players")
+use_players = st.toggle("Filter op aantal spelers")
 if use_players:
-    amount_player = st.number_input("Amount of Players", min_value=1, step=1)
+    amount_player = st.number_input("Aantal spelers", min_value=1, step=1)
 
 # Language
-use_language = st.toggle("Filter by Language")
+use_language = st.toggle("Filter op taal")
 if use_language:
-    language = st.selectbox("Language", ['Dutch', 'English'])
+    language = st.selectbox("Taal", ['Dutch', 'English'])
 
 # Type
-use_type = st.toggle("Filter by Game Type")
+use_type = st.toggle("Filter op type spel")
 if use_type:
-    game_type = st.selectbox("Game Type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
+    game_type = st.selectbox("Spel type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
 
 # Playing Time
-use_playing_time = st.toggle("Filter by Maximum Playing Time")
+use_playing_time = st.toggle("Filter op maximum spelduur")
 if use_playing_time:
-    playing_time = st.number_input("Maximum Playing Time (minutes)", min_value=10, step=5)
+    playing_time = st.number_input("Maximum spelduur (minuten)", min_value=10, step=5)
 
 st.divider()
 
-if st.button("Filter Games"):
+if st.button("Filter Spellen"):
     filtered = df.copy()
 
     if use_players:
