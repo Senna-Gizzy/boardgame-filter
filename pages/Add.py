@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load your live sheet
-sheet_url = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvmOim51vLmrUePJP5A/export?format=csv&gid=0"
-df = pd.read_csv(sheet_url)
+sheet_link = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvmOim51vLmrUePJP5A/edit#gid=0"
 
 st.markdown(f"""
 <a href="{sheet_link}" target="_blank">
