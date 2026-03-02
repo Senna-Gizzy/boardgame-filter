@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
+sheet_url = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvmOim51vLmrUePJP5A/export?format=csv&gid=0"
+df = pd.read_csv(sheet_url)
+# df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
 
 st.title("Search for a Specific Game")
 
