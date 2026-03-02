@@ -73,7 +73,3 @@ with st.form("add_game_form"):
 
         st.success("Row created! You can copy it into your Google Sheet or download as CSV.")
         st.dataframe(new_row_df)
-
-        # Option to download
-        csv = new_row_df.to_csv(index=False).encode('utf-8')
-        st.download_button("Download CSV", data=csv, file_name="new_boardgame.csv", mime="text/csv")
