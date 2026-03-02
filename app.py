@@ -35,9 +35,9 @@ if st.button("Zoek Specifiek Spel"):
 if st.button("Vind Spelsuggestie"):
     st.switch_page("pages/Filter_Game.py")
 
-# Recommendation button
-if st.button("Zoek Vergelijkbare Spellen"):
-    st.switch_page("pages/Recommend_Game.py")
+# # Recommendation button
+# if st.button("Zoek Vergelijkbare Spellen"):
+#     st.switch_page("pages/Recommend_Game.py")
 
 # Guru button
 if st.button("Guru's Only"):
