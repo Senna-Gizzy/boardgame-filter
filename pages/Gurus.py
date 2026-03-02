@@ -10,7 +10,7 @@ if st.button("⬅ Back to Home"):
 CORRECT_PASSWORD = st.secrets["guru_password"]
 
 password = st.text_input("Enter Password", type="password")
-if st.login("Login"):
+if st.button("Login"):
     if password == CORRECT_PASSWORD:
         st.session_state.authenticated = True
         st.success("Access granted!")
