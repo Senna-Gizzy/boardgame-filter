@@ -5,15 +5,15 @@ import pandas as pd
 st.title("Guru's Only Page")
 
 if st.button("Nieuw Spel Toevoegen"):
-    st.switch_page("pages/Gurus_Only/Add.py")
+    st.switch_page("pages/Add.py")
 
 # Delete button
 if st.button("Spel Verwijderen"):
-    st.switch_page("pages/Gurus_Only/Delete.py")
+    st.switch_page("pages/Delete.py")
 
 # Changes
 if st.button("Spel Opmerkingen"):
-    st.switch_page("pages/Gurus_Only/Changes.py")
+    st.switch_page("pages/Changes.py")
 
 if st.button("⬅ Back to Home"):
     st.switch_page("app.py")
