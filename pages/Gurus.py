@@ -3,7 +3,7 @@ import pandas as pd
 
 st.title("Guru's Only")
 
-# Back button
+# Back button (outside the conditional block to avoid duplicate element ID issues)
 if st.button("⬅ Back to Home"):
     st.switch_page("app.py")
 
@@ -20,15 +20,10 @@ if st.button("Login"):
             <button style="padding:10px 20px; font-size:14px;">Spel Toevoegen of Verwijderen</button>
         </a>
         """, unsafe_allow_html=True)
-        
-        # # Changes
-        # if st.button("Spel Opmerkingen"):
-        #     st.switch_page("pages/Changes.py")
-        
-        if st.button("⬅ Back to Home"):
-            st.switch_page("app.py")
+
         st.divider()
     else:
         st.error("Incorrect password")
 
-st.stop()  
+# Stop at the end to prevent the app from executing further
+st.stop()
