@@ -46,35 +46,6 @@ st.divider()
 # Add the two buttons for filtering
 col1, col2 = st.columns(2)
 
-# with col1:
-#     if st.button("Zoek (10 willekeurige spellen)"):
-#         filtered = df.copy()
-#         if use_players:
-#             filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
-#         if use_language:
-#             filtered = filtered[filtered['Language'] == language]
-#         if use_type:
-#             filtered = filtered[filtered['Type'] == game_type]
-#         if use_playing_time:
-#             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
-
-#         # Show up to 10 random games as cards
-#         if not filtered.empty:
-#             games = filtered.sample(min(10, len(filtered)))
-#             for idx, game in games.iterrows():
-#                 game_name = game['Boardgame']
-#                 game_link = f"https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)}"  # Placeholder link to BGG
-
-#                 # Display the card (you can customize it with a game image URL if available)
-#                 st.markdown(f"""
-#                 <div style="background-color:#f4f4f4; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
-#                     <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
-#                     <p style="font-size: 14px;">Klik om naar de [BoardGameGeek pagina](https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)})</p>
-#                 </div>
-#                 """, unsafe_allow_html=True)
-#         else:
-#             st.warning("Geen spellen gevonden")
-
 with col1:
     if st.button("Zoek (10 willekeurige spellen)"):
         filtered = df.copy()
@@ -87,13 +58,24 @@ with col1:
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
-        # Display random 10 games or fewer as a list
+        # Show up to 10 random games as cards
         if not filtered.empty:
-            games = filtered.sample(min(10, len(filtered)))['Boardgame']
-            for game in games:
-                st.write(f"• {game}")  # Each game as a list item
+            games = filtered.sample(min(10, len(filtered)))
+            for idx, game in games.iterrows():
+                game_name = game['Boardgame']
+                game_link = f"https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)}"  # Placeholder link to BGG
+
+                # Display the card (you can customize it with a game image URL if available)
+                st.markdown(f"""
+                <div style="background-color:#f4f4f4; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+                    <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
+                    
+                </div>
+                """, unsafe_allow_html=True)
         else:
             st.warning("Geen spellen gevonden")
+
+#<p style="font-size: 14px;">Klik om naar de [BoardGameGeek pagina](https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)})</p>
             
 with col2:
     if st.button("Zoek Alle spellen"):
