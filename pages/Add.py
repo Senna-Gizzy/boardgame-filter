@@ -21,18 +21,18 @@ Met deze form kun je bordspellen die geopend zijn voor onze gamelibrary toevoege
 Daarnaast is het belangrijk dat iedereen hetzelfde format gebruikt zodat onze database gelijk blijft. Hieronder een voorbeeld van het juist invoeren van een nieuw borspel.
 
 **Instructions:**
-- `Plaats` = B 
-- `Plank` = 2 
-- `Aantal` = 1
-- `Naam` = Secret Hitler (2016)
-- `Minimum Spelers` = 5
-- `Maximum Spelers` = 10
-- `Tijdsduur` = 30-45 Min
-- `Moeilijkheidsgraad` = 1.74
-- `Taal` = English
-- `Type` = Party
-- `Categorie` = Bluffing, Card Game, Deduction, Humor, Party Game, Political, Print & Play, Spies / Secret Agents
-- `Mechanisme` = Hidden Roles, Player Elimination, Team-Based Game, Traitor Game, Voting
+- Plaats = B 
+- Plank = 2 
+- Aantal = 1
+- Naam = Secret Hitler (2016)
+- Minimum Spelers = 5
+- Maximum Spelers` = 10
+- Tijdsduur = 30-45 Min
+- Moeilijkheidsgraad = 1.74
+- Taal = English
+- Type = Party
+- Categorie = Bluffing, Card Game, Deduction, Humor, Party Game, Political, Print & Play, Spies / Secret Agents
+- Mechanisme = Hidden Roles, Player Elimination, Team-Based Game, Traitor Game, Voting
 """)
 
 with st.form("add_game_form"):
