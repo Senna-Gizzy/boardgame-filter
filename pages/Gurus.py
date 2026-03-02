@@ -4,12 +4,12 @@ import pandas as pd
 st.title("Guru's Only")
 
 # Back button (outside the conditional block to avoid duplicate element ID issues)
-if st.button("⬅ Back to Home"):
+if st.button("⬅ Terug"):
     st.switch_page("app.py")
 
 CORRECT_PASSWORD = st.secrets["guru_password"]
 
-password = st.text_input("Enter Password", type="password")
+password = st.text_input("Wachtwoord", type="password")
 if st.button("Login"):
     if password == CORRECT_PASSWORD:
         st.session_state.authenticated = True
@@ -23,7 +23,7 @@ if st.button("Login"):
 
         st.divider()
     else:
-        st.error("Incorrect password")
+        st.error("Verkeerd wachtwoord")
 
 # Stop at the end to prevent the app from executing further
 st.stop()
