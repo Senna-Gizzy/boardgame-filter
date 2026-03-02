@@ -44,48 +44,48 @@ if st.button("Guru's Only"):
     st.switch_page("pages/Gurus.py")
 st.divider()
 
-#_____________________________________________________________________________________________
-# Main page
-st.subheader("Filter Options")
+# #_____________________________________________________________________________________________
+# # Main page
+# st.subheader("Filter Options")
 
-# Players
-use_players = st.toggle("Filter by Amount of Players")
-if use_players:
-    amount_player = st.number_input("Amount of Players", min_value=1, step=1)
+# # Players
+# use_players = st.toggle("Filter by Amount of Players")
+# if use_players:
+#     amount_player = st.number_input("Amount of Players", min_value=1, step=1)
 
-# Language
-use_language = st.toggle("Filter by Language")
-if use_language:
-    language = st.selectbox("Language", ['Dutch', 'English'])
+# # Language
+# use_language = st.toggle("Filter by Language")
+# if use_language:
+#     language = st.selectbox("Language", ['Dutch', 'English'])
 
-# Type
-use_type = st.toggle("Filter by Game Type")
-if use_type:
-    game_type = st.selectbox("Game Type",["Abstract","Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
+# # Type
+# use_type = st.toggle("Filter by Game Type")
+# if use_type:
+#     game_type = st.selectbox("Game Type",["Abstract","Children's", 'Family', 'Party', 'Strategy', 'Thematic'])
 
-# Playing Time
-use_playing_time = st.toggle("Filter by Maximum Playing Time")
-if use_playing_time:
-    playing_time = st.number_input("Maximum Playing Time (minutes)", min_value=10, step=5)
+# # Playing Time
+# use_playing_time = st.toggle("Filter by Maximum Playing Time")
+# if use_playing_time:
+#     playing_time = st.number_input("Maximum Playing Time (minutes)", min_value=10, step=5)
 
-st.divider()
+# st.divider()
 
-if st.button("Filter Games"):
-    filtered = df.copy()
+# if st.button("Filter Games"):
+#     filtered = df.copy()
 
-    if use_players:
-        filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
+#     if use_players:
+#         filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
 
-    if use_language:
-        filtered = filtered[filtered['Language'] == language]
+#     if use_language:
+#         filtered = filtered[filtered['Language'] == language]
 
-    if use_type:
-        filtered = filtered[filtered['Type'] == game_type]
+#     if use_type:
+#         filtered = filtered[filtered['Type'] == game_type]
 
-    if use_playing_time:
-        filtered = filtered[filtered['Max Playing Time'] <= playing_time]
+#     if use_playing_time:
+#         filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
-    if filtered.empty:
-        st.warning("No game can be found")
-    else:
-        st.write(filtered['Boardgame'])
+#     if filtered.empty:
+#         st.warning("No game can be found")
+#     else:
+#         st.write(filtered['Boardgame'])
