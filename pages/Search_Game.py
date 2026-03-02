@@ -5,13 +5,13 @@ sheet_url = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvm
 df = pd.read_csv(sheet_url)
 # df = pd.read_csv("Spellenhuis Bordspellen Library - Library.csv")
 
-st.title("Search for a Specific Game")
+st.title("Zoek Specifiek Spel")
 
 # Back button
-if st.button("⬅ Back to Home"):
+if st.button("⬅ Terug"):
     st.switch_page("app.py")
 
-search_term = st.text_input("Type a game name")
+search_term = st.text_input("Type een bordspelnaam")
 
 filtered = df.copy()
 
