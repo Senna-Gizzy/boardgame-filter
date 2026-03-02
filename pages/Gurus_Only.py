@@ -4,12 +4,13 @@ import pandas as pd
 # Add button
 st.title("Guru's Only Page")
 
-if st.button("Nieuw Spel Toevoegen"):
-    st.switch_page("pages/Add.py")
+sheet_link = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvmOim51vLmrUePJP5A/edit#gid=0"
 
-# Delete button
-if st.button("Spel Verwijderen"):
-    st.switch_page("pages/Delete.py")
+st.markdown(f"""
+<a href="{sheet_link}" target="_blank">
+    <button style="padding:10px 20px; font-size:16px;">Spel Toevoegen of Verwijderen</button>
+</a>
+""", unsafe_allow_html=True)
 
 # Changes
 if st.button("Spel Opmerkingen"):
