@@ -51,6 +51,11 @@ div[data-testid="stToggle"] label p {
 }
 
 /* ------------------ Number Inputs ------------------ */
+/* Number input label (e.g., 'Aantal spelers', 'Maximum spelduur') */
+div[data-testid="stNumberInput"] label p {
+    color: white !important;
+}
+
 div[data-testid="stNumberInput"] input {
     color: black !important;
 }
