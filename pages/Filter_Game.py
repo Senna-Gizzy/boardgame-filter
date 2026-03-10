@@ -63,31 +63,6 @@ div[data-testid="stNumberInput"] input {
     color: black !important;
 }
 
-# /* Selectbox text */
-# div[data-testid="stSelectbox"] div[data-baseweb="select"] {
-#     color: black !important;
-# }
-
-# /* Dropdown selected value */
-# div[data-testid="stSelectbox"] span {
-#     color: black !important;
-# }
-
-# /* Text inside selectbox (selected value) */
-# div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
-#     color: black !important;
-# }
-
-# /* Dropdown menu items */
-# div[role="listbox"] li {
-#     color: black !important;
-# }
-
-# /* Placeholder / selected text */
-# div[data-testid="stSelectbox"] span {
-#     color: black !important;
-# }
-
 /* Expander header */
 .streamlit-expanderHeader {
     background-color: white;
@@ -97,9 +72,23 @@ div[data-testid="stNumberInput"] input {
 
 /* Expander content */
 .streamlit-expanderContent {
-    background-color: white;
+    background-color: #c29e8e;
     border-radius: 8px;
     padding: 10px;
+}
+
+/* Target all alert boxes */
+div[role="alert"] {
+    border-radius: 8px !important;
+    padding: 12px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+    color: #fff !important;
+}
+
+/* Error alert with red background */
+div[role="alert"][aria-label="error"] {
+    background-color: #db3131 !important;
 }
 </style>
 """, unsafe_allow_html=True)
