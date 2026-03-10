@@ -63,9 +63,30 @@ div[data-testid="stNumberInput"] input {
     color: black !important;
 }
 
+/* Selected value inside the selectbox */
+div[data-testid="stSelectbox"] div[data-baseweb="select"] span {
+    color: black !important;
+}
+
+/* Dropdown menu background */
+div[role="listbox"] {
+    background-color: white !important;
+}
+
+/* Dropdown options text */
+div[role="listbox"] li {
+    color: black !important;
+}
+
+/* Hovered option */
+div[role="listbox"] li:hover {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+}
+
 /* Expander header */
 .streamlit-expanderHeader {
-    background-color: white;
+    background-color: #c29e8e;
     border-radius: 8px;
     padding: 6px;
 }
