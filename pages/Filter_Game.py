@@ -198,7 +198,7 @@ with col1:
                     st.write(f"⚙️ Mechanisme: {mechanism}")
         
         else:
-            st.warning("Geen spellen gevonden")
+            st.error("Geen spellen gevonden")
 
     if st.button("Zoek Alle spellen", use_container_width = True):
         # Show all games
@@ -216,7 +216,7 @@ with col1:
         if not filtered.empty:
             st.write(filtered[['Boardgame', 'Letter', 'Number']])
         else:
-            st.warning("Geen spellen gevonden")
+            st.error("Geen spellen gevonden")
 
 
 #<p style="font-size: 14px;">Klik om naar de [BoardGameGeek pagina](https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)})</p>
