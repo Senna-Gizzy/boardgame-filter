@@ -119,6 +119,19 @@ details > div {
     padding: 10px !important;
     color: white !important;
 }
+
+div[data-testid="stExpander"] summary {
+    background-color: #c29e8e !important;
+    color: #654f41 !important;
+}
+
+/* Keep same color when hovering or clicking */
+div[data-testid="stExpander"] summary:hover,
+div[data-testid="stExpander"] summary:focus,
+div[data-testid="stExpander"] summary:active {
+    background-color: #c29e8e !important;
+    color: #654f41 !important;
+}
 /* ------------------ Alert Boxes ------------------ */
 div[role="alert"] {
     border-radius: 8px !important;
