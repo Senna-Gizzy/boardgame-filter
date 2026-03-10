@@ -42,35 +42,51 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Input box text (number inputs) */
-div[data-testid="stNumberInput"] input {
-    color: black !important;
+
+/* Labels like 'Taal', 'Spel type', 'Aantal spelers' */
+div[data-testid="stWidgetLabel"] p {
+    color: white !important;
 }
 
-/* Selectbox text */
-div[data-testid="stSelectbox"] div[data-baseweb="select"] {
-    color: black !important;
-}
-
-/* Dropdown selected value */
-div[data-testid="stSelectbox"] span {
-    color: black !important;
-}
-
-/* Text inside selectbox (selected value) */
+/* Selectbox selected value */
 div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
     color: black !important;
 }
 
-/* Dropdown menu items */
+/* Dropdown menu options */
 div[role="listbox"] li {
     color: black !important;
 }
 
-/* Placeholder / selected text */
-div[data-testid="stSelectbox"] span {
-    color: black !important;
-}
+# /* Input box text (number inputs) */
+# div[data-testid="stNumberInput"] input {
+#     color: black !important;
+# }
+
+# /* Selectbox text */
+# div[data-testid="stSelectbox"] div[data-baseweb="select"] {
+#     color: black !important;
+# }
+
+# /* Dropdown selected value */
+# div[data-testid="stSelectbox"] span {
+#     color: black !important;
+# }
+
+# /* Text inside selectbox (selected value) */
+# div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+#     color: black !important;
+# }
+
+# /* Dropdown menu items */
+# div[role="listbox"] li {
+#     color: black !important;
+# }
+
+# /* Placeholder / selected text */
+# div[data-testid="stSelectbox"] span {
+#     color: black !important;
+# }
 
 /* Expander header */
 .streamlit-expanderHeader {
