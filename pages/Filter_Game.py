@@ -52,7 +52,7 @@ div[data-testid="stToggle"] label p {
 
 /* ------------------ Number Inputs ------------------ */
 div[data-testid="stNumberInput"] input {
-    color: white !important;
+    color: black !important;
 }
 
 /* Number input placeholder / stepper buttons text */
