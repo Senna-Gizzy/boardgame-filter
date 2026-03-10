@@ -93,7 +93,7 @@ div[role="listbox"] div:hover {
 
 /* ------------------ Expanders ------------------ */
 details {
-    background-color: #c29e8e !important;
+    background-color: White !important;
     border-radius: 10px !important;
     padding: 8px !important;
     margin-bottom: 10px !important;
@@ -115,7 +115,7 @@ summary:active {
 
 /* Inner content */
 details > div {
-    background-color: #c29e8e !important;
+    background-color: white !important;
     padding: 10px !important;
     color: white !important;
 }
@@ -165,7 +165,7 @@ if st.button("⬅ Terug"):
 
 st.write("")
 st.title("Filter Opties")
-st.write("")
+st.divider()
 
 # Players
 use_players = st.toggle("Filter op aantal spelers")
