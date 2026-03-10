@@ -4,6 +4,62 @@ import streamlit as st
 import pandas as pd
 import random
 
+st.markdown("""
+<style>
+/* Background color */
+.stApp {
+    background-color: #4F8A8B;
+}
+
+/* Title styling */
+h1 {
+    text-align: left;
+    color: white !important;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #654f41;
+    color: white;
+    border-radius: 12px;
+    height: 48px;
+    width: 100%;
+    border: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.stButton > button:hover {
+    background-color: #c29e8e;
+    transform: translateY(-2px);
+}
+
+/* Link buttons */
+.stLinkButton a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #654f41 !important;
+    color: white !important;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Link button hover */
+.stLinkButton a:hover {
+    background-color: #c29e8e !important;
+    transform: translateY(-2px);
+}
+</style>
+""", unsafe_allow_html=True)
+
+#_______________________________________________________________________
 sheet_url = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvmOim51vLmrUePJP5A/export?format=csv&gid=0"
 df = pd.read_csv(sheet_url)
 
