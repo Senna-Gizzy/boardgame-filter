@@ -56,6 +56,19 @@ h1 {
     background-color: #654f41 !important;
     transform: translateY(-2px);
 }
+/* Expander header */
+.streamlit-expanderHeader {
+    background-color: white;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+/* Expander content */
+.streamlit-expanderContent {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+}
 </style>
 """, unsafe_allow_html=True)
 
