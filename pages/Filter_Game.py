@@ -42,24 +42,22 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Link buttons */
-.stToggle a {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    background-color: #654f41 !important;
+/* Toggle label text */
+div[data-testid="stToggle"] label {
     color: white !important;
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-weight: 600;
-    transition: all 0.2s ease;
 }
 
-/* Link button hover */
-.stLinkButton a:hover {
-    background-color: #c29e8e !important;
-    transform: translateY(-2px);
+/* Selectbox label text */
+div[data-testid="stSelectbox"] label {
+    color: white !important;
 }
+
+/* Number input label text */
+div[data-testid="stNumberInput"] label {
+    color: white !important;
+}
+
+
 /* Expander header */
 .streamlit-expanderHeader {
     background-color: white;
@@ -117,6 +115,7 @@ use_playing_time = st.toggle("Filter op maximum spelduur")
 if use_playing_time:
     playing_time = st.number_input("Maximum spelduur (minuten)", min_value=10, step=5)
 
+st.write("")
 st.write("")
 #st.divider()
 
