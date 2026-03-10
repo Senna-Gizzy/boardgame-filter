@@ -92,24 +92,21 @@ div[role="listbox"] div:hover {
 }
 
 /* ------------------ Expanders ------------------ */
-/* Expander header (title bar) */
+/* Expander header */
 .streamlit-expanderHeader {
     background-color: #c29e8e !important;
+    color: white !important;
     border-radius: 8px !important;
     padding: 6px !important;
-    color: white !important;  /* Make header text white */
 }
 
-/* Expander content (inside area) */
-.streamlit-expanderContent {
+/* Expander content wrapper */
+.streamlit-expanderContent,
+.streamlit-expanderContent > div,
+.streamlit-expanderContent > div > div {
     background-color: #c29e8e !important;
     border-radius: 8px !important;
     padding: 10px !important;
-}
-
-/* Inner container inside expander content */
-.streamlit-expanderContent > div {
-    background-color: #c29e8e !important;
 }
 
 /* ------------------ Alert Boxes ------------------ */
