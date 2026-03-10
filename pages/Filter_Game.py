@@ -61,27 +61,28 @@ with col1:
         # Show up to 10 random games as cards
         if not filtered.empty:
             games = filtered.sample(min(10, len(filtered)))
-        for idx, game in games.iterrows():
-            game_name = game['Boardgame']
-            letter = game['Letter']
-            number = game['Number']
-            min_players = game['Min. Players']
-            max_players = game['Max. Players']
-            play_time = game['Playing Time']
-            game_type = game['Type']
-            mechanism = game['Mechanism']
         
-            with st.expander(f"🎲 {game_name}  |  📍 {letter}{number}"):
+            for idx, game in games.iterrows():
         
-                st.markdown(f"""
-                **📍 Locatie:** {letter}{number}  
-                **👥 Spelers:** {min_players} - {max_players}  
-                **⏱️ Speeltijd:** {play_time}  
-                **🎯 Type:** {game_type}  
-                **⚙️ Mechanisme:** {mechanism}
-                """)
-                else:
-                    st.warning("Geen spellen gevonden")
+                game_name = game['Boardgame']
+                letter = game['Letter']
+                number = game['Number']
+                min_players = game['Min. Players']
+                max_players = game['Max. Players']
+                play_time = game['Playing Time']
+                game_type = game['Type']
+                mechanism = game['Mechanism']
+        
+                with st.expander(f"🎲 {game_name}  |  📍 {letter}{number}"):
+        
+                    st.write(f"📍 Locatie: {letter}{number}")
+                    st.write(f"👥 Spelers: {min_players} - {max_players}")
+                    st.write(f"⏱️ Speeltijd: {play_time}")
+                    st.write(f"🎯 Type: {game_type}")
+                    st.write(f"⚙️ Mechanisme: {mechanism}")
+        
+        else:
+            st.warning("Geen spellen gevonden")
 
     if st.button("Zoek Alle spellen"):
         # Show all games
