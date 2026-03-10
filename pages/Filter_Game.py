@@ -117,6 +117,7 @@ use_playing_time = st.toggle("Filter op maximum spelduur")
 if use_playing_time:
     playing_time = st.number_input("Maximum spelduur (minuten)", min_value=10, step=5)
 
+st.write("")
 #st.divider()
 
 # Add the two buttons for filtering
