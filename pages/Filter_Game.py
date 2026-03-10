@@ -4,11 +4,15 @@ import streamlit as st
 import pandas as pd
 import random
 
+# blueish: #4F8A8B
+# darkbrown: #654f41
+# lightbrown: #c29e8e
+
 st.markdown("""
 <style>
 /* Background color */
 .stApp {
-    background-color: #c29e8e;
+    background-color: #4F8A8B;
 }
 
 /* Title styling */
@@ -22,7 +26,7 @@ h1 {
 
 /* Buttons */
 .stButton > button {
-    background-color: #4F8A8B;
+    background-color: #654f41;
     color: white;
     border-radius: 12px;
     height: 48px;
@@ -34,7 +38,7 @@ h1 {
 
 /* Hover effect */
 .stButton > button:hover {
-    background-color: #654f41;
+    background-color: #c29e8e;
     transform: translateY(-2px);
 }
 
@@ -43,7 +47,7 @@ h1 {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
-    background-color: #4F8A8B !important;
+    background-color: #654f41 !important;
     color: white !important;
     border-radius: 12px;
     padding: 14px 16px;
@@ -53,7 +57,7 @@ h1 {
 
 /* Link button hover */
 .stLinkButton a:hover {
-    background-color: #654f41 !important;
+    background-color: #c29e8e !important;
     transform: translateY(-2px);
 }
 /* Expander header */
@@ -86,9 +90,12 @@ df['Max Playing Time'] = df['Max Playing Time'].fillna(df['Min Playing Time'])
 df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
 # Main Page
-st.title("Filter Opties")
 if st.button("⬅ Terug"):
     st.switch_page("app.py")
+
+st.write("")
+st.title("Filter Opties")
+st.write("")
 
 # Players
 use_players = st.toggle("Filter op aantal spelers")
@@ -110,7 +117,7 @@ use_playing_time = st.toggle("Filter op maximum spelduur")
 if use_playing_time:
     playing_time = st.number_input("Maximum spelduur (minuten)", min_value=10, step=5)
 
-st.divider()
+#st.divider()
 
 # Add the two buttons for filtering
 col1, col2 = st.columns(2)
