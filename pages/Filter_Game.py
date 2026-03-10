@@ -61,16 +61,17 @@ with col1:
         # Show up to 10 random games as cards
         if not filtered.empty:
             games = filtered.sample(min(10, len(filtered)))
-            for idx, game in games.iterrows():
-                game_name = game[['Boardgame','Letter','Number']]
-
-                # Display the card (you can customize it with a game image URL if available)
-                st.markdown(f"""
-                <div style="background-color:#c29e8e; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
-                    <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
-                    
-                </div>
-                """, unsafe_allow_html=True)
+        for idx, game in games.iterrows():
+            game_name = game['Boardgame']
+            letter = game['Letter']
+            number = game['Number']
+        
+            st.markdown(f"""
+            <div style="background-color:#c29e8e; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+                <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
+                <p style="font-size: 14px; margin:0;">📍 Locatie: {letter}{number}</p>
+            </div>
+            """, unsafe_allow_html=True)
         else:
             st.warning("Geen spellen gevonden")
 
