@@ -65,15 +65,23 @@ with col1:
             game_name = game['Boardgame']
             letter = game['Letter']
             number = game['Number']
+            min_players = game['Min. Players']
+            max_players = game['Max. Players']
+            play_time = game['Playing Time']
+            game_type = game['Type']
+            mechanism = game['Mechanism']
         
-            st.markdown(f"""
-            <div style="background-color:#c29e8e; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
-                <h5 style="font-size: 16px; color: #333;">{game_name}</h5>
-                <p style="font-size: 14px; margin:0;">📍 Locatie: {letter}{number}</p>
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            st.warning("Geen spellen gevonden")
+            with st.expander(f"🎲 {game_name}  |  📍 {letter}{number}"):
+        
+                st.markdown(f"""
+                **📍 Locatie:** {letter}{number}  
+                **👥 Spelers:** {min_players} - {max_players}  
+                **⏱️ Speeltijd:** {play_time}  
+                **🎯 Type:** {game_type}  
+                **⚙️ Mechanisme:** {mechanism}
+                """)
+                else:
+                    st.warning("Geen spellen gevonden")
 
     if st.button("Zoek Alle spellen"):
         # Show all games
