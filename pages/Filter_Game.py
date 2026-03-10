@@ -10,12 +10,12 @@ import random
 
 st.markdown("""
 <style>
-/* Background color */
+/* ------------------ App Background ------------------ */
 .stApp {
     background-color: #4F8A8B;
 }
 
-/* Title styling */
+/* ------------------ Titles ------------------ */
 h1 {
     text-align: left;
     color: white !important;
@@ -23,8 +23,11 @@ h1 {
     font-size: 40px;
     margin-bottom: 20px;
 }
+h2, h3, h4, h5, h6 {
+    color: white !important;
+}
 
-/* Button */
+/* ------------------ Buttons ------------------ */
 .stButton > button {
     background-color: #654f41;
     color: white;
@@ -40,52 +43,54 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Widget labels (Taal, Spel type, etc.) */
-div[data-testid="stWidgetLabel"] p {
+/* ------------------ Filter Labels ------------------ */
+/* Widget labels like 'Taal', 'Spel type', 'Aantal spelers', toggle labels */
+div[data-testid="stWidgetLabel"] p,
+div[data-testid="stToggle"] label p {
     color: white !important;
 }
 
-/* Number input text */
+/* ------------------ Number Inputs ------------------ */
 div[data-testid="stNumberInput"] input {
     color: black !important;
 }
 
-/* Selectbox selected value */
+/* ------------------ Selectboxes ------------------ */
+/* Selectbox label (above the box) */
+div[data-testid="stSelectbox"] label p {
+    color: white !important;
+}
+
+/* Selected value inside the selectbox */
 div[data-testid="stSelectbox"] div[data-baseweb="select"] span {
     color: black !important;
 }
 
-/* Dropdown menu background */
+/* Dropdown menu background and options */
 div[role="listbox"] {
     background-color: white !important;
 }
-
-/* Dropdown option text inside selectbox */
 div[role="listbox"] div span {
     color: black !important;
 }
-
-/* Dropdown hovered option */
 div[role="listbox"] div:hover {
     background-color: #f0f0f0 !important;
     color: black !important;
 }
 
-/* Expander header */
+/* ------------------ Expanders ------------------ */
 .streamlit-expanderHeader {
     background-color: #c29e8e;
     border-radius: 8px;
     padding: 6px;
 }
-
-/* Expander content */
 .streamlit-expanderContent {
     background-color: #c29e8e;
     border-radius: 8px;
     padding: 10px;
 }
 
-/* Alert boxes */
+/* ------------------ Alert Boxes ------------------ */
 div[role="alert"] {
     border-radius: 8px !important;
     padding: 12px !important;
