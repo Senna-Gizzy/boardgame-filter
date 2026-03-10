@@ -24,8 +24,8 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Buttons */
-.stButton > button {
+/* Toggle */
+.stToggle > button {
     background-color: #654f41;
     color: white;
     border-radius: 12px;
