@@ -101,7 +101,7 @@ details {
 
 /* Expander header text */
 summary {
-    color: white !important;
+    color: #c29e8e !important;
     font-weight: 600 !important;
     font-size: 18px !important;
 }
@@ -121,7 +121,7 @@ details > div {
 }
 
 div[data-testid="stExpander"] summary {
-    background-color: #c29e8e !important;
+    background-color: white!important;
     color: #654f41 !important;
 }
 
@@ -129,7 +129,7 @@ div[data-testid="stExpander"] summary {
 div[data-testid="stExpander"] summary:hover,
 div[data-testid="stExpander"] summary:focus,
 div[data-testid="stExpander"] summary:active {
-    background-color: #c29e8e !important;
+    background-color: white !important;
     color: #654f41 !important;
 }
 /* ------------------ Alert Boxes ------------------ */
