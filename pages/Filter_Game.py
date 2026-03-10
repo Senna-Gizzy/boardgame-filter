@@ -57,6 +57,20 @@ div[data-testid="stSelectbox"] span {
     color: black !important;
 }
 
+/* Text inside selectbox (selected value) */
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    color: black !important;
+}
+
+/* Dropdown menu items */
+div[role="listbox"] li {
+    color: black !important;
+}
+
+/* Placeholder / selected text */
+div[data-testid="stSelectbox"] span {
+    color: black !important;
+}
 
 /* Expander header */
 .streamlit-expanderHeader {
