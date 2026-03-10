@@ -251,7 +251,7 @@ with col1:
                 use_container_width=True,
                 hide_index=True,
                 column_config={
-                    "Boardgame": "🎲 Spel",
+                    "Boardgame": "Bordspel",
                     "Locatie": "📍 Locatie"
                 }
             )
