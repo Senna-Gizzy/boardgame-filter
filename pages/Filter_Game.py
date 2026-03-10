@@ -55,6 +55,19 @@ div[data-testid="stNumberInput"] input {
     color: black !important;
 }
 
+/* Number input text (user value) */
+div[data-testid="stNumberInput"] input {
+    color: white !important;        /* change from black to white */
+}
+
+/* Number input placeholder / stepper buttons text */
+div[data-testid="stNumberInput"] div[data-baseweb="input"] input::placeholder {
+    color: white !important;
+    opacity: 1 !important;
+}
+div[data-testid="stNumberInput"] div[data-baseweb="input"] svg {
+    fill: white !important;
+}
 /* ------------------ Selectboxes ------------------ */
 /* Selectbox label (above the box) */
 div[data-testid="stSelectbox"] label p {
