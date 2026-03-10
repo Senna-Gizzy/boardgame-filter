@@ -54,6 +54,9 @@ div[data-testid="stToggle"] label p {
 div[data-testid="stNumberInput"] input {
     color: black !important;
 }
+div[data-testid="stWidgetLabel"] p {
+    color: white !important;
+}
 
 /* Number input placeholder / stepper buttons text */
 div[data-testid="stNumberInput"] div[data-baseweb="input"] input::placeholder {
