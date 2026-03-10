@@ -103,15 +103,15 @@ with center:
     st.title("Spellenhuis Game Library")
     st.write("") 
 
-    if st.button("Zoek Specifiek Spel"):
+    if st.button("Zoek Specifiek Spel", use_container_width=True):
         st.switch_page("pages/Search_Game.py")
     
     # Suggestion button
-    if st.button("Vind Spelsuggestie"):
+    if st.button("Vind Spelsuggestie", use_container_width=True):
         st.switch_page("pages/Filter_Game.py")
     
     # # Recommendation button
-    # if st.button("Zoek Vergelijkbare Spellen"):
+    # if st.button("Zoek Vergelijkbare Spellen", use_container_width=True):
     #     st.switch_page("pages/Recommend_Game.py")
 
 
