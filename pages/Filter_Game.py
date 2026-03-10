@@ -232,9 +232,9 @@ with col1:
         else:
             st.error("Geen spellen gevonden")
 
-    if st.button("Zoek Alle spellen", use_container_width = True):
-        # Show all games
+    if st.button("Zoek Alle spellen", use_container_width=True):
         filtered = df.copy()
+    
         if use_players:
             filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
         if use_language:
@@ -243,10 +243,19 @@ with col1:
             filtered = filtered[filtered['Type'] == game_type]
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
-
-        # Show all games if filtered
+    
         if not filtered.empty:
-            st.write(filtered[['Boardgame', 'Letter', 'Number']])
+            filtered['Locatie'] = filtered['Letter'] + filtered['Number'].astype(str)
+            st.dataframe(
+                filtered[['Boardgame', 'Locatie']],
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Boardgame": "🎲 Spel",
+                    "Locatie": "📍 Locatie"
+                }
+            )
+    
         else:
             st.error("Geen spellen gevonden")
 
