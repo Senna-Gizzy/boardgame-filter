@@ -101,7 +101,7 @@ details {
 
 /* Expander header text */
 summary {
-    color: #654f41 !important;
+    color: white !important;
     font-weight: 600 !important;
     font-size: 18px !important;
 }
