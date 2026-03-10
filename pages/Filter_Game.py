@@ -8,7 +8,7 @@ st.markdown("""
 <style>
 /* Background color */
 .stApp {
-    background-color: #4F8A8B;
+    background-color: #c29e8e;
 }
 
 /* Title styling */
@@ -73,7 +73,7 @@ df['Max Playing Time'] = df['Max Playing Time'].fillna(df['Min Playing Time'])
 df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
 # Main Page
-st.subheader("Filter Opties")
+st.title("Filter Opties")
 if st.button("⬅ Terug"):
     st.switch_page("app.py")
 
@@ -103,7 +103,7 @@ st.divider()
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("Laat 10 spellen zien"):
+    if st.button("Laat 10 spellen zien", use_container_width = True):
         filtered = df.copy()
         if use_players:
             filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
@@ -140,7 +140,7 @@ with col1:
         else:
             st.warning("Geen spellen gevonden")
 
-    if st.button("Zoek Alle spellen"):
+    if st.button("Zoek Alle spellen", use_container_width = True):
         # Show all games
         filtered = df.copy()
         if use_players:
