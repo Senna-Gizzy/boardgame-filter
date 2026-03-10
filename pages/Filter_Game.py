@@ -165,7 +165,7 @@ if st.button("⬅ Terug"):
 
 st.write("")
 st.title("Filter Opties")
-st.divider()
+st.write("")
 
 # Players
 use_players = st.toggle("Filter op aantal spelers")
