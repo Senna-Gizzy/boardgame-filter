@@ -42,18 +42,19 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Toggle label text (Filter op aantal spelers etc.) */
-div[data-testid="stToggle"] p {
+/* Input box text (number inputs) */
+div[data-testid="stNumberInput"] input {
     color: black !important;
 }
 
-/* Other input labels */
-div[data-testid="stNumberInput"] label p {
-    color: white !important;
+/* Selectbox text */
+div[data-testid="stSelectbox"] div[data-baseweb="select"] {
+    color: black !important;
 }
 
-div[data-testid="stSelectbox"] label p {
-    color: white !important;
+/* Dropdown selected value */
+div[data-testid="stSelectbox"] span {
+    color: black !important;
 }
 
 
