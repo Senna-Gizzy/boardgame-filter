@@ -115,7 +115,7 @@ summary:active {
 
 /* Inner content */
 details > div {
-    background-color: white !important;
+    background-color: #c29e8e !important;
     padding: 10px !important;
     color: white !important;
 }
