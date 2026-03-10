@@ -92,8 +92,10 @@ div[role="listbox"] div:hover {
 }
 
 /* ------------------ Expanders ------------------ */
-/* Expander header */
-.streamlit-expanderHeader {
+/* Expander header - normal, hover, and focus */
+.streamlit-expanderHeader,
+.streamlit-expanderHeader:hover,
+.streamlit-expanderHeader:focus {
     background-color: #c29e8e !important;
     color: white !important;
     border-radius: 8px !important;
@@ -108,7 +110,6 @@ div[role="listbox"] div:hover {
     border-radius: 8px !important;
     padding: 10px !important;
 }
-
 /* ------------------ Alert Boxes ------------------ */
 div[role="alert"] {
     border-radius: 8px !important;
