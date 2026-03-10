@@ -183,7 +183,7 @@ if use_type:
     game_type = st.selectbox("Spel type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
 
 # Playing Time
-use_playing_time = st.toggle("Filter op maximum spelduur", use_container_width = True)
+use_playing_time = st.toggle("Filter op maximum spelduur")
 if use_playing_time:
     playing_time = st.number_input("Maximum spelduur (minuten)", min_value=10, step=5)
 
@@ -191,7 +191,7 @@ st.write("")
 st.write("")
 #st.divider()
 
-# Add the two buttons for filtering
+
 col1, col2 = st.columns(2)
 
 with col1:
