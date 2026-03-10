@@ -58,10 +58,10 @@ div[role="listbox"] li {
     color: black !important;
 }
 
-# /* Input box text (number inputs) */
-# div[data-testid="stNumberInput"] input {
-#     color: black !important;
-# }
+/* Input box text (number inputs) */
+div[data-testid="stNumberInput"] input {
+    color: black !important;
+}
 
 # /* Selectbox text */
 # div[data-testid="stSelectbox"] div[data-baseweb="select"] {
