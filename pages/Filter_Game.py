@@ -44,7 +44,7 @@ h1 {
 
 /* Toggle label text (Filter op aantal spelers etc.) */
 div[data-testid="stToggle"] p {
-    color: white !important;
+    color: black !important;
 }
 
 /* Other input labels */
@@ -53,7 +53,7 @@ div[data-testid="stNumberInput"] label p {
 }
 
 div[data-testid="stSelectbox"] label p {
-    color: black !important;
+    color: white !important;
 }
 
 
