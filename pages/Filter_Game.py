@@ -103,7 +103,7 @@ details {
 summary {
     color: #c29e8e !important;
     font-weight: 600 !important;
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 /* Prevent color change */
