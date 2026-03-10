@@ -49,7 +49,7 @@ div[data-testid="stToggle"] p {
 
 /* Other input labels */
 div[data-testid="stNumberInput"] label p {
-    color: white !important;
+    color: black !important;
 }
 
 div[data-testid="stSelectbox"] label p {
