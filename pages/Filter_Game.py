@@ -84,6 +84,21 @@ div[role="listbox"] li:hover {
     color: black !important;
 }
 
+/* Dropdown menu background */
+div[role="listbox"] {
+    background-color: white !important;
+}
+
+/* Dropdown options text */
+div[role="listbox"] li span {
+    color: black !important;
+}
+
+/* Hovered option */
+div[role="listbox"] li:hover {
+    background-color: #f0f0f0 !important;
+}
+
 /* Expander header */
 .streamlit-expanderHeader {
     background-color: #c29e8e;
