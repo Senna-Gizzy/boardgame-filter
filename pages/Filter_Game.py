@@ -92,23 +92,17 @@ div[role="listbox"] div:hover {
 }
 
 /* ------------------ Expanders ------------------ */
-/* Expander header - normal, hover, and focus */
-.streamlit-expanderHeader,
-.streamlit-expanderHeader:hover,
-.streamlit-expanderHeader:focus {
+.streamlit-expander,
+.streamlit-expander > div,
+.streamlit-expander > div > div,
+.streamlit-expander > div > div > div {
     background-color: #c29e8e !important;
-    color: white !important;
-    border-radius: 8px !important;
-    padding: 6px !important;
 }
 
-/* Expander content wrapper */
-.streamlit-expanderContent,
-.streamlit-expanderContent > div,
-.streamlit-expanderContent > div > div {
-    background-color: #c29e8e !important;
-    border-radius: 8px !important;
-    padding: 10px !important;
+/* Expander header text */
+.streamlit-expanderHeader {
+    color: white !important;
+    font-weight: 600 !important;
 }
 /* ------------------ Alert Boxes ------------------ */
 div[role="alert"] {
