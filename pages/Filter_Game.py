@@ -35,35 +35,22 @@ h1 {
     font-weight: 600;
     transition: all 0.2s ease;
 }
-
-/* Hover effect */
 .stButton > button:hover {
     background-color: #c29e8e;
     transform: translateY(-2px);
 }
 
-
-/* Labels like 'Taal', 'Spel type', 'Aantal spelers' */
+/* Widget labels (Taal, Spel type, etc.) */
 div[data-testid="stWidgetLabel"] p {
     color: white !important;
 }
 
-/* Selectbox selected value */
-div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
-    color: black !important;
-}
-
-/* Dropdown menu options */
-div[role="listbox"] li {
-    color: black !important;
-}
-
-/* Input box text (number inputs) */
+/* Number input text */
 div[data-testid="stNumberInput"] input {
     color: black !important;
 }
 
-/* Selected value inside the selectbox */
+/* Selectbox selected value */
 div[data-testid="stSelectbox"] div[data-baseweb="select"] span {
     color: black !important;
 }
@@ -73,30 +60,15 @@ div[role="listbox"] {
     background-color: white !important;
 }
 
-/* Dropdown options text */
-div[role="listbox"] li {
+/* Dropdown option text inside selectbox */
+div[role="listbox"] div span {
     color: black !important;
 }
 
-/* Hovered option */
-div[role="listbox"] li:hover {
+/* Dropdown hovered option */
+div[role="listbox"] div:hover {
     background-color: #f0f0f0 !important;
     color: black !important;
-}
-
-/* Dropdown menu background */
-div[role="listbox"] {
-    background-color: white !important;
-}
-
-/* Dropdown options text */
-div[role="listbox"] li span {
-    color: black !important;
-}
-
-/* Hovered option */
-div[role="listbox"] li:hover {
-    background-color: #f0f0f0 !important;
 }
 
 /* Expander header */
@@ -113,7 +85,7 @@ div[role="listbox"] li:hover {
     padding: 10px;
 }
 
-/* Target all alert boxes */
+/* Alert boxes */
 div[role="alert"] {
     border-radius: 8px !important;
     padding: 12px !important;
@@ -121,8 +93,6 @@ div[role="alert"] {
     box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
     color: #fff !important;
 }
-
-/* Error alert with red background */
 div[role="alert"][aria-label="error"] {
     background-color: #db3131 !important;
 }
