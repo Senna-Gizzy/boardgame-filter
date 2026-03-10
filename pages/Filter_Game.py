@@ -73,7 +73,7 @@ with col1:
                 game_type = game['Type']
                 mechanism = game['Mechanisms']
         
-                with st.expander(f"🎲 {game_name}  |  📍 {letter}{number}"):
+                with st.expander(f"{game_name}"):
         
                     st.write(f"📍 Locatie: {letter}{number}")
                     st.write(f"👥 Spelers: {min_players} - {max_players}")
