@@ -94,15 +94,15 @@ div[role="listbox"] div:hover {
 /* ------------------ Expanders ------------------ */
 details {
     background-color: White !important;
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     padding: 4px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
 }
-#padding 8, font-size 18
+#padding 8, font-size 18, font-weight 600, border-radius 10, margin-bottom 10
 /* Expander header text */
 summary {
     color: #c29e8e !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     font-size: 12px !important;
 }
 
