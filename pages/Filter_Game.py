@@ -95,15 +95,15 @@ div[role="listbox"] div:hover {
 details {
     background-color: White !important;
     border-radius: 10px !important;
-    padding: 8px !important;
+    padding: 4px !important;
     margin-bottom: 10px !important;
 }
-
+#padding 8, font-size 18
 /* Expander header text */
 summary {
     color: #c29e8e !important;
     font-weight: 600 !important;
-    font-size: 18px !important;
+    font-size: 14px !important;
 }
 
 /* Prevent color change */
