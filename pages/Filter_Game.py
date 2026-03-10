@@ -71,7 +71,7 @@ with col1:
                 max_players = game['Max. Players']
                 play_time = game['Playing Time']
                 game_type = game['Type']
-                mechanism = game['Mechanism']
+                mechanism = game['Mechanisms']
         
                 with st.expander(f"🎲 {game_name}  |  📍 {letter}{number}"):
         
