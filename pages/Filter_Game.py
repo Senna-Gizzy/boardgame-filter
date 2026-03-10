@@ -93,22 +93,31 @@ div[role="listbox"] div:hover {
 
 /* ------------------ Expanders ------------------ */
 details {
-    background-color: #c29e8e !important;   /* lightbrown */
+    background-color: #c29e8e !important;
     border-radius: 10px !important;
-    color: white !important;
     padding: 8px !important;
     margin-bottom: 10px !important;
 }
+
 /* Expander header text */
 summary {
-    color: white !important;
+    color: #654f41 !important;
     font-weight: 600 !important;
     font-size: 18px !important;
 }
-/* Inner content (the expanded area) */
+
+/* Prevent color change */
+summary:hover,
+summary:focus,
+summary:active {
+    color: #654f41 !important;
+}
+
+/* Inner content */
 details > div {
     background-color: #c29e8e !important;
     padding: 10px !important;
+    color: white !important;
 }
 /* ------------------ Alert Boxes ------------------ */
 div[role="alert"] {
