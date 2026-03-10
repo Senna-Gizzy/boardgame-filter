@@ -24,8 +24,8 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Toggle */
-.stToggle > button {
+/* Button */
+.stButton > button {
     background-color: #654f41;
     color: white;
     border-radius: 12px;
@@ -43,7 +43,7 @@ h1 {
 }
 
 /* Link buttons */
-.stLinkButton a {
+.stToggle a {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
