@@ -182,6 +182,9 @@ use_type = st.toggle("Filter op type spel")
 if use_type:
     game_type = st.selectbox("Spel type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
 
+# Co-op
+use_cooperative = st.toggle("Filter op samenwerkingsspel (Cooperative Games)")
+
 # Playing Time
 use_playing_time = st.toggle("Filter op maximum spelduur")
 if use_playing_time:
@@ -203,8 +206,12 @@ with col1:
             filtered = filtered[filtered['Language'] == language]
         if use_type:
             filtered = filtered[filtered['Type'] == game_type]
+        if use_cooperative:
+            cooperative_games = df[df['Mechanisms'].apply(lambda x: isinstance(x, str) and 'Cooperative Game' in x)]
+            filtered = filtered[filtered['Boardgame'].isin(cooperative_games['Boardgame'])]
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
+
 
         # Show up to 10 random games as cards
         if not filtered.empty:
@@ -242,6 +249,9 @@ with col1:
             filtered = filtered[filtered['Language'] == language]
         if use_type:
             filtered = filtered[filtered['Type'] == game_type]
+        if use_cooperative:
+            cooperative_games = df[df['Mechanisms'].apply(lambda x: isinstance(x, str) and 'Cooperative Game' in x)]
+            filtered = filtered[filtered['Boardgame'].isin(cooperative_games['Boardgame'])]
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
     
