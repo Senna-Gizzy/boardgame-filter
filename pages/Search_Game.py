@@ -64,12 +64,12 @@ div[data-testid="stNumberInput"] div[data-baseweb="input"] svg {
 }
 /* ------------------ Selectboxes ------------------ */
 /* Selectbox label (above the box) */
-div[data-testid="stSelectbox"] label p {
+div[data-testid="stTextinput"] label p {
     color: white !important;
 }
 
 /* Selected value inside the selectbox */
-div[data-testid="stSelectbox"] div[data-baseweb="select"] span {
+div[data-testid="stTextinput"] div[data-baseweb="select"] span {
     color: black !important;
 }
 
@@ -129,7 +129,4 @@ if search_term:
                     "Locatie": "📍 Locatie"
                 }
             )    
-else:
-    st.error("Geen spellen gevonden")
 
-# st.dataframe(filtered)
