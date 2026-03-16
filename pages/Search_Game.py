@@ -37,34 +37,14 @@ h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
 }
 
-/* ------------------ Filter Labels ------------------ */
-/* Widget labels like 'Taal', 'Spel type', 'Aantal spelers', toggle labels */
-div[data-testid="stWidgetLabel"] p,
-div[data-testid="stToggle"] label p {
-    color: white !important;
-}
-
-/* ------------------ Number Inputs ------------------ */
-/* Number input label (e.g., 'Aantal spelers', 'Maximum spelduur') */
-div[data-testid="stNumberInput"] label p {
-    color: white !important;
-}
-
-div[data-testid="stNumberInput"] input {
-    color: black !important;
-}
-
-/* Number input placeholder / stepper buttons text */
-div[data-testid="stNumberInput"] div[data-baseweb="input"] input::placeholder {
-    color: white !important;
-    opacity: 1 !important;
-}
-div[data-testid="stNumberInput"] div[data-baseweb="input"] svg {
-    fill: white !important;
-}
 /* ------------------ Selectboxes ------------------ */
 /* Selectbox label (above the box) */
 div[data-testid="stTextinput"] label p {
+    color: white !important;
+}
+
+/* Placeholder text inside the text input */
+div[data-testid="stTextInput"] input::placeholder {
     color: white !important;
 }
 
@@ -84,21 +64,8 @@ div[role="listbox"] div:hover {
     background-color: #f0f0f0 !important;
     color: black !important;
 }
-
-/* ------------------ Alert Boxes ------------------ */
-div[role="alert"] {
-    border-radius: 8px !important;
-    padding: 12px !important;
-    font-weight: 700 !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
-    color: #fff !important;
-}
-div[role="alert"][aria-label="error"] {
-    background-color: #db3131 !important;
-}
 </style>
 """, unsafe_allow_html=True)
-
 #____________________________________________________________
 sheet_url = "https://docs.google.com/spreadsheets/d/1Lf9Rs121pEpCPjAhEC7pk00ffvmOim51vLmrUePJP5A/export?format=csv&gid=0"
 df = pd.read_csv(sheet_url)
