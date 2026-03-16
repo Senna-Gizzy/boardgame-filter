@@ -232,19 +232,29 @@ with col1:
         else:
             st.error("Geen spellen gevonden")
 
-    if st.button("Zoek door alle spellen", use_container_width=True):
-        filtered = df.copy()
+if st.button("Zoek door alle spellen", use_container_width=True):
+
+    filtered = df.copy()
+
+    if use_players:
+        filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
+    if use_language:
+        filtered = filtered[filtered['Language'] == language]
+    if use_type:
+        filtered = filtered[filtered['Type'] == game_type]
+    if use_playing_time:
+        filtered = filtered[filtered['Max Playing Time'] <= playing_time]
+
+    st.session_state.filtered_games = filtered
+
+
+    # Show results if they exist
+    if "filtered_games" in st.session_state:
     
-        if use_players:
-            filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
-        if use_language:
-            filtered = filtered[filtered['Language'] == language]
-        if use_type:
-            filtered = filtered[filtered['Type'] == game_type]
-        if use_playing_time:
-            filtered = filtered[filtered['Max Playing Time'] <= playing_time]
+        filtered = st.session_state.filtered_games
     
         if not filtered.empty:
+    
             game_choice = st.selectbox(
                 "Kies een spel",
                 filtered['Boardgame'].sort_values()
@@ -252,12 +262,9 @@ with col1:
     
             game = filtered[filtered['Boardgame'] == game_choice].iloc[0]
     
-            game_name = game['Boardgame']
-            location = f"{game['Letter']}{game['Number']}"
-            
-            with st.expander(f"{game_name}", expanded=True):
+            with st.expander(game['Boardgame'], expanded=True):
     
-                st.write(f"📍 Locatie: {location}")
+                st.write(f"📍 Locatie: {game['Letter']}{game['Number']}")
                 st.write(f"👥 Spelers: {game['Min. Players']} - {game['Max. Players']}")
                 st.write(f"⏱️ Speeltijd: {game['Playing Time']}")
                 st.write(f"🎯 Type: {game['Type']}")
