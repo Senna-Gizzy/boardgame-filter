@@ -169,28 +169,31 @@ st.write("")
 st.title("Filter Opties")
 st.write("")
 
-# Players
-use_players = st.toggle("Filter op aantal spelers")
-if use_players:
-    amount_player = st.number_input("Aantal spelers", min_value=1, step=1)
+col1, col2 = st.columns(2)
 
-# Language
-use_language = st.toggle("Filter op taal")
-if use_language:
-    language = st.selectbox("Taal", ['Dutch', 'English'])
-
-# Type
-use_type = st.toggle("Filter op type spel")
-if use_type:
-    game_type = st.selectbox("Spel type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
-
-# Co-op
-use_cooperative = st.toggle("Filter op samenwerkingsspellen")
-
-# Playing Time
-use_playing_time = st.toggle("Filter op maximum spelduur")
-if use_playing_time:
-    playing_time = st.number_input("Maximum spelduur (minuten)", min_value=10, step=5)
+with col1:
+    # Players
+    use_players = st.toggle("Filter op aantal spelers")
+    if use_players:
+        amount_player = st.number_input("Aantal spelers", min_value=1, step=1)
+    
+    # Language
+    use_language = st.toggle("Filter op taal")
+    if use_language:
+        language = st.selectbox("Taal", ['Dutch', 'English'])
+    
+    # Type
+    use_type = st.toggle("Filter op type spel")
+    if use_type:
+        game_type = st.selectbox("Spel type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
+    
+    # Co-op
+    use_cooperative = st.toggle("Filter op samenwerkingsspellen")
+    
+    # Playing Time
+    use_playing_time = st.toggle("Filter op maximum spelduur")
+    if use_playing_time:
+        playing_time = st.number_input("Maximum spelduur (minuten)", min_value=10, step=5)
 
 st.write("")
 st.write("")
