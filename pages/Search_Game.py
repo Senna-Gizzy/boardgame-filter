@@ -44,7 +44,7 @@ div[data-testid="stTextinput"] label p {
 }
 
 /* Placeholder text inside the text input */
-div[data-testid="stTextInput"] input::placeholder {
+.stTextInput input::placeholder {
     color: white !important;
 }
 
