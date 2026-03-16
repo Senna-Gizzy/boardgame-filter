@@ -43,9 +43,9 @@ div[data-testid="stTextinput"] label p {
     color: white !important;
 }
 
-/* Targeting the placeholder text of the text input */
+/* Targeting the text input's placeholder */
 div[data-testid="stTextInput"] input::placeholder {
-    color: white !important;  /* Ensuring placeholder text is white */
+    color: white !important;
 }
 
 /* Selected value inside the selectbox */
@@ -63,6 +63,35 @@ div[role="listbox"] div span {
 div[role="listbox"] div:hover {
     background-color: #f0f0f0 !important;
     color: black !important;
+}
+
+/* ------------------ Number Inputs ------------------ */
+div[data-testid="stNumberInput"] label p {
+    color: white !important;
+}
+
+div[data-testid="stNumberInput"] input {
+    color: black !important;
+}
+
+div[data-testid="stNumberInput"] div[data-baseweb="input"] input::placeholder {
+    color: white !important;
+    opacity: 1 !important;
+}
+div[data-testid="stNumberInput"] div[data-baseweb="input"] svg {
+    fill: white !important;
+}
+
+/* ------------------ Alert Boxes ------------------ */
+div[role="alert"] {
+    border-radius: 8px !important;
+    padding: 12px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+    color: #fff !important;
+}
+div[role="alert"][aria-label="error"] {
+    background-color: #db3131 !important;
 }
 </style>
 """, unsafe_allow_html=True)
