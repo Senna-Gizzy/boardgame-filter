@@ -185,7 +185,7 @@ if use_type:
     game_type = st.selectbox("Spel type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
 
 # Co-op
-use_cooperative = st.toggle("Filter op samenwerkingsspel (Cooperative Games)")
+use_cooperative = st.toggle("Filter op samenwerkingsspellen")
 
 # Playing Time
 use_playing_time = st.toggle("Filter op maximum spelduur")
@@ -260,24 +260,24 @@ with col1:
         # Now set the session state only after the button is clicked
         st.session_state.filtered_games = filtered
 
-# Show results if they exist
-if "filtered_games" in st.session_state:
-    filtered = st.session_state.filtered_games
-    
-    if not filtered.empty:
-        game_choice = st.selectbox(
-            "Kies een spel",
-            filtered['Boardgame'].sort_values()
-        )
-    
-        game = filtered[filtered['Boardgame'] == game_choice].iloc[0]
-    
-        with st.expander(game['Boardgame'], expanded=True):
-            st.write(f"📍 Locatie: {game['Letter']}{game['Number']}")
-            st.write(f"👥 Spelers: {game['Min. Players']} - {game['Max. Players']}")
-            st.write(f"⏱️ Speeltijd: {game['Playing Time']}")
-            st.write(f"🎯 Type: {game['Type']}")
-            st.write(f"⚙️ Mechanisme: {game['Mechanisms']}")
-    
-    else:
-        st.error("Geen spellen gevonden")
+    # Show results if they exist
+    if "filtered_games" in st.session_state:
+        filtered = st.session_state.filtered_games
+        
+        if not filtered.empty:
+            game_choice = st.selectbox(
+                "Kies een spel",
+                filtered['Boardgame'].sort_values()
+            )
+        
+            game = filtered[filtered['Boardgame'] == game_choice].iloc[0]
+        
+            with st.expander(game['Boardgame'], expanded=True):
+                st.write(f"📍 Locatie: {game['Letter']}{game['Number']}")
+                st.write(f"👥 Spelers: {game['Min. Players']} - {game['Max. Players']}")
+                st.write(f"⏱️ Speeltijd: {game['Playing Time']}")
+                st.write(f"🎯 Type: {game['Type']}")
+                st.write(f"⚙️ Mechanisme: {game['Mechanisms']}")
+        
+        else:
+            st.error("Geen spellen gevonden")
