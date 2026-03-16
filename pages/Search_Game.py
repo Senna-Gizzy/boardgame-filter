@@ -15,9 +15,21 @@ search_term = st.text_input("Type een bordspelnaam")
 
 filtered = df.copy()
 
-if search_term:
-    filtered = filtered[
-        filtered['Boardgame'].str.contains(search_term, case=False, na=False)
-    ]
 
-st.dataframe(filtered)
+
+if search_term:
+            filtered = filtered[filtered['Boardgame'].str.contains(search_term, case=False, na=False)]
+            filtered['Locatie'] = filtered['Letter'] + filtered['Number'].astype(str)
+            st.dataframe(
+                filtered[['Boardgame', 'Locatie']],
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Boardgame": "Bordspel",
+                    "Locatie": "📍 Locatie"
+                }
+            )    
+else:
+    st.error("Geen spellen gevonden")
+
+# st.dataframe(filtered)
