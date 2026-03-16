@@ -39,7 +39,7 @@ h2, h3, h4, h5, h6 {
 
 /* ------------------ Selectboxes ------------------ */
 /* Selectbox label (above the box) */
-div[data-testid="stTextinput"] label p {
+div[data-testid="stTextInput"] label p {
     color: white !important;
 }
 
@@ -49,7 +49,7 @@ div[data-testid="stTextInput"] input::placeholder {
 }
 
 /* Selected value inside the selectbox */
-div[data-testid="stTextinput"] div[data-baseweb="select"] span {
+div[data-testid="stTextInput"] div[data-baseweb="select"] span {
     color: black !important;
 }
 
