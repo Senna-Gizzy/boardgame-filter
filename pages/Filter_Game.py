@@ -192,13 +192,11 @@ if use_playing_time:
 
 st.write("")
 st.write("")
-#st.divider()
-
 
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("Laat 10 spellen zien", use_container_width = True):
+    if st.button("Laat 10 spellen zien", use_container_width=True):
         filtered = df.copy()
         if use_players:
             filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
@@ -211,7 +209,6 @@ with col1:
             filtered = filtered[filtered['Boardgame'].isin(cooperative_games['Boardgame'])]
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
-
 
         # Show up to 10 random games as cards
         if not filtered.empty:
@@ -240,7 +237,6 @@ with col1:
             st.error("Geen spellen gevonden")
 
     if st.button("Zoek door alle spellen", use_container_width=True):
-    
         filtered = df.copy()
     
         if use_players:
@@ -254,36 +250,28 @@ with col1:
             filtered = filtered[filtered['Boardgame'].isin(cooperative_games['Boardgame'])]
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
-    
-        # st.session_state.filtered_games = filtered
-    
-    
-    # Show results if they exist
-    if "filtered_games" in st.session_state:
-    
-        filtered = st.session_state.filtered_games
-    
-        if not filtered.empty:
-    
-            game_choice = st.selectbox(
-                "Kies een spel",
-                filtered['Boardgame'].sort_values()
-            )
-    
-            game = filtered[filtered['Boardgame'] == game_choice].iloc[0]
-    
-            with st.expander(game['Boardgame'], expanded=True):
-    
-                st.write(f"📍 Locatie: {game['Letter']}{game['Number']}")
-                st.write(f"👥 Spelers: {game['Min. Players']} - {game['Max. Players']}")
-                st.write(f"⏱️ Speeltijd: {game['Playing Time']}")
-                st.write(f"🎯 Type: {game['Type']}")
-                st.write(f"⚙️ Mechanisme: {game['Mechanisms']}")
-    
-        else:
-            st.error("Geen spellen gevonden")
 
-#<p style="font-size: 14px;">Klik om naar de [BoardGameGeek pagina](https://boardgamegeek.com/boardgame/{random.randint(1000, 9999)})</p>
-            
+        # Now set the session state only after the button is clicked
+        st.session_state.filtered_games = filtered
 
+# Show results if they exist
+if "filtered_games" in st.session_state:
+    filtered = st.session_state.filtered_games
     
+    if not filtered.empty:
+        game_choice = st.selectbox(
+            "Kies een spel",
+            filtered['Boardgame'].sort_values()
+        )
+    
+        game = filtered[filtered['Boardgame'] == game_choice].iloc[0]
+    
+        with st.expander(game['Boardgame'], expanded=True):
+            st.write(f"📍 Locatie: {game['Letter']}{game['Number']}")
+            st.write(f"👥 Spelers: {game['Min. Players']} - {game['Max. Players']}")
+            st.write(f"⏱️ Speeltijd: {game['Playing Time']}")
+            st.write(f"🎯 Type: {game['Type']}")
+            st.write(f"⚙️ Mechanisme: {game['Mechanisms']}")
+    
+    else:
+        st.error("Geen spellen gevonden")
