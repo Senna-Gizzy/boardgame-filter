@@ -168,6 +168,8 @@ if st.button("⬅ Terug"):
 st.write("")
 st.title("Filter Opties")
 st.write("")
+st.divider()
+st.write("")
 
 col1, col2 = st.columns(2)
 
