@@ -87,3 +87,11 @@ if search_term:
                 }
             )    
 
+            game_choice = st.selectbox("Kies een spel", filtered['Boardgame'])
+            
+            game = filtered[filtered['Boardgame'] == game_choice].iloc[0]
+            
+            st.write(f"📍 Locatie: {game['Letter']}{game['Number']}")
+            st.write(f"👥 Spelers: {game['Min. Players']} - {game['Max. Players']}")
+            st.write(f"⏱️ Speeltijd: {game['Playing Time']}")
+
