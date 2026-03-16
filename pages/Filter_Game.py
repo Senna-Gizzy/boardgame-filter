@@ -197,6 +197,10 @@ col1, col2 = st.columns(2)
 
 with col1:
     if st.button("Laat 10 spellen zien", use_container_width=True):
+        # Reset the session state for filtered games when the button is clicked
+        if "filtered_games" in st.session_state:
+            del st.session_state.filtered_games
+        
         filtered = df.copy()
         if use_players:
             filtered = filtered[(filtered['Min. Players'] <= amount_player) & (filtered['Max. Players'] >= amount_player)]
