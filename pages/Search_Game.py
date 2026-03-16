@@ -43,10 +43,9 @@ div[data-testid="stTextinput"] label p {
     color: white !important;
 }
 
-/* Placeholder text inside the text input */
-.stTextInput input::placeholder {
-    color: white !important;
-    opacity: 1 !important;  /* Ensure full opacity */
+/* Targeting the placeholder text of the text input */
+div[data-testid="stTextInput"] input::placeholder {
+    color: white !important;  /* Ensuring placeholder text is white */
 }
 
 /* Selected value inside the selectbox */
