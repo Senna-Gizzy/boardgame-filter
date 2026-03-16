@@ -161,7 +161,9 @@ df['Max Playing Time'] = pd.to_numeric(df['Max Playing Time'], errors='coerce')
 
 # Main Page
 if st.button("⬅ Terug"):
-    st.switch_page("app.py")
+    if "filtered_games" in st.session_state:
+        del st.session_state.filtered_games  
+    st.switch_page("app.py")  
 
 st.write("")
 st.title("Filter Opties")
