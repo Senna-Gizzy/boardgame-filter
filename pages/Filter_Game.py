@@ -255,7 +255,7 @@ with col1:
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
     
-        st.session_state.filtered_games = filtered
+        # st.session_state.filtered_games = filtered
     
     
     # Show results if they exist
