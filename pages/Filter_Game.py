@@ -185,10 +185,10 @@ with col1:
     # Type
     use_type = st.toggle("Filter op type spel")
     if use_type:
-        game_type = st.selectbox("Spel type",["Abstract","Children", 'Family', 'Party', 'Strategy', 'Narrative'])
+        game_type = st.selectbox("Spel type",["Cooperative", "Children", 'Family', 'Party', 'Strategy', "Two-Player"])
     
     # Co-op
-    use_cooperative = st.toggle("Filter op samenwerkingsspellen")
+    #use_cooperative = st.toggle("Filter op samenwerkingsspellen")
     
     # Playing Time
     use_playing_time = st.toggle("Filter op maximum spelduur")
