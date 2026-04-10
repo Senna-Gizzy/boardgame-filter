@@ -213,9 +213,9 @@ with col1:
             filtered = filtered[filtered['Language'] == language]
         if use_type:
             filtered = filtered[filtered['Type'] == game_type]
-        if use_cooperative:
-            cooperative_games = df[df['Mechanisms'].apply(lambda x: isinstance(x, str) and 'Cooperative Game' in x)]
-            filtered = filtered[filtered['Boardgame'].isin(cooperative_games['Boardgame'])]
+        # if use_cooperative:
+        #     cooperative_games = df[df['Mechanisms'].apply(lambda x: isinstance(x, str) and 'Cooperative Game' in x)]
+        #     filtered = filtered[filtered['Boardgame'].isin(cooperative_games['Boardgame'])]
         if use_playing_time:
             filtered = filtered[filtered['Max Playing Time'] <= playing_time]
 
